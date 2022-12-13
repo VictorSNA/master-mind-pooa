@@ -38,7 +38,7 @@ public class Main {
 				+ "- N�o h� segundas tentativas, uma vez inserido todos os valores, sua sequ�ncia estar� pronta!\n\n"
 				+ "										Boa Sorte!\n");
 		
-		for(int i=0; i<=5; i++) {
+		for(int i=0; i<=4; i++) {
 			
 			System.out.println("---------------------------------------------------------------------------------------------");
 			System.out.println("Insira um n�mero para sequ�ncia: ");
