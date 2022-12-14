@@ -41,20 +41,20 @@ public class Main {
 		for(int i=0; i<=4; i++) {
 			
 			System.out.println("---------------------------------------------------------------------------------------------");
-			System.out.println("Insira um n�mero para sequ�ncia: ");
+			System.out.println("\nInsira um número para sequ�ncia: ");
 			x = tec.nextInt();
 			
 			if(x > 5 || x <= 0) {
 				
 				System.out.println("-----------------------------------");
-				System.out.println("Erro! N�mero inv�lido\n");
+				System.out.println("\nErro! N�mero inv�lido\n");
 				break;
 				
 			}else {
 				
 				pilha.adicionar(x);
 				System.out.println("-----------------------------------");
-				System.out.println("Deseja trocar este n�mero?");
+				System.out.println("\nDeseja trocar este n�mero?");
 				c = tec.next().charAt(0);
 				
 				if(c == 's') {
@@ -64,7 +64,7 @@ public class Main {
 				}else {
 					
 					System.out.println("-----------------------------------");
-					System.out.println("N�mero mantido!\n");
+					System.out.println("\nN�mero mantido!\n");
 					
 				}
 			}
@@ -73,24 +73,24 @@ public class Main {
 		
 		int acertos;
 		
-		System.out.println("Sua sequ�ncia �: "+pilha.toString());
-		System.out.println("A sequ�ncia correta �: "+lista.toString());
+		System.out.println("\nSua sequ�ncia �: "+pilha.toString());
+		System.out.println("\nA sequ�ncia correta �: "+lista.toString());
 		System.out.println("---------------------------------------------------------------------------------------------");
-		System.out.println("Hora da verdade, caro jogador!!\n");
-		System.out.println("Agora insira a quantidade de acertos que teve: ");
+		System.out.println("\nHora da verdade, caro jogador!!\n");
+		System.out.println("\nAgora insira a quantidade de acertos que teve: ");
 		acertos = tec.nextInt();
 		
 		if(acertos < 3) {
-			System.out.println("Que pena... Voc� n�o obteve a quantidade correta pra ser um MasterMind.\n Mas n�o des�nime! Tente novamente at� se tornar um grande MasterMind!!\n");
+			System.out.println("\nQue pena... Voc� n�o obteve a quantidade correta pra ser um MasterMind.\n Mas n�o des�nime! Tente novamente at� se tornar um grande MasterMind!!\n");
 			System.out.println("---------------------------------------------------------------------------------------------");
 		}else if(acertos < 0 || acertos > 5){
-			System.out.println("N�mero inv�lido. Tentativa de Vit�ria cancelada por motivo de trapa�a!\nQue pena, lhe falta sabedoria pra ser um MasterMind.");
+			System.out.println("\nN�mero inv�lido. Tentativa de Vit�ria cancelada por motivo de trapa�a!\nQue pena, lhe falta sabedoria pra ser um MasterMind.");
 			System.out.println("---------------------------------------------------------------------------------------------");
 		}else if(acertos > 3){
-			System.out.println("Par�bens Jogador, M�ximo respeito! Voc� � um verdadeiro Mastermind!!\n");
+			System.out.println("\nPar�bens Jogador, M�ximo respeito! Voc� � um verdadeiro Mastermind!!\n");
 			System.out.println("---------------------------------------------------------------------------------------------");
 		}else {
-			System.out.println("Par�bens Jogador, Voc� est� no caminho pra se tornar um verdadeiro MasterMind!\n");
+			System.out.println("\nPar�bens Jogador, Voc� est� no caminho pra se tornar um verdadeiro MasterMind!\n");
 			System.out.println("---------------------------------------------------------------------------------------------");
 		}
 		
