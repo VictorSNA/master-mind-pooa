@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GanhadorValidator extends Validator{
+	@Override
 	public void isValido(ArrayList<Integer> numeros) {
 		ArrayList<Integer> numerosPremiados = new ArrayList<Integer>();
 		Random rand = new Random();
