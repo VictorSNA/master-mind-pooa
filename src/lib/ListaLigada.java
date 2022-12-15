@@ -10,7 +10,7 @@ package lib;
  * 
  * @author pjandl
  */
-public class ListaLigada {
+public class ListaLigada extends NodoLigado {
 	// Sentinela que "vigia" o in�cio da lista
 	// Facilita percorrer a lista do in�cio ao fim
 	private NodoLigado inicio = null;
