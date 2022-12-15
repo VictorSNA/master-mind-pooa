@@ -1,6 +1,6 @@
 package lib;
 
-public class Pilha {
+public class Pilha extends ListaLigada{
 	// veste a lista peladinha de Pilha (fantasia de Pilha SextaFeira-13)
 	private ListaLigada lista = new ListaLigada();
 	
