@@ -1,18 +1,18 @@
 package lib;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Collections;
 
-public class GanhadorValidator extends Validator{
+public class EasymodeValidator extends Validator{
 	@Override
 	public void isValido(ArrayList<Integer> numeros) {
 		ArrayList<Integer> numerosPremiados = new ArrayList<Integer>();
-		Random rand = new Random();
 
-		for (int j = 0; j<5; j++)
+		for (int j = 1; j<6; j++)
         {
-            numerosPremiados.add(rand.nextInt(6));
+            numerosPremiados.add(j);
         }
 
+		Collections.shuffle(numerosPremiados);
 
 		int proximoNumero = 0;
 	    for(int numero : numeros) {

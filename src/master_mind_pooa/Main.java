@@ -2,7 +2,8 @@ package master_mind_pooa;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import lib.GanhadorValidator;
+import lib.EasymodeValidator;
+import lib.HardmodeValidator;
 
 
 public class Main {
@@ -11,10 +12,11 @@ public class Main {
 		Scanner tec = new Scanner(System.in);
 
 		ArrayList<Integer> lista = new ArrayList<Integer>();
-		GanhadorValidator gv = new GanhadorValidator();
+		EasymodeValidator gv = new EasymodeValidator();
+		HardmodeValidator hard = new HardmodeValidator();
 
 		int x;
-		char c;
+		int m = 1;
 
 		System.out.println(
 				"Bem vindo ao MasterMind!\nNeste pequeno e simples jogo você deve acertar a sequência embaralhada de 1 a 5.\n"
@@ -27,12 +29,27 @@ public class Main {
 		System.out.println(
 				"---------------------------------------------------------------------------------------------");
 		try {
-			for (int i = 0; i <= 4; i++) {
-				System.out.println("\nInsira um número para sequência: " + "(" + (i+1)+"/5)");
-				x = tec.nextInt();
-				lista.add(x);
-				System.out.println("-----------------------------------");
+			System.out.println(
+					"\n(1)MODO FACIL: 5 números e 3 acertos\n(2)MODO HARD: 10 números e 10 acertos e todos em sequência");
+			System.out.println(
+					"---------------------------------------------------------------------------------------------");
+			m = tec.nextInt();
+			if(m == 1) {
+				for (int i = 0; i <= 4; i++) {
+					System.out.println("\nInsira um número para sequência: " + "(" + (i+1)+"/5)");
+					x = tec.nextInt();
+					lista.add(x);
+					System.out.println("-----------------------------------");
 
+				}
+			} else {
+				for (int i = 0; i <= 9; i++) {
+					System.out.println("\nInsira um número para sequência: " + "(" + (i+1)+"/10)");
+					x = tec.nextInt();
+					lista.add(x);
+					System.out.println("-----------------------------------");
+
+				}
 			}
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Nao eh um numero, por favor reinicie o jogo e tente novamente.");
@@ -45,8 +62,16 @@ public class Main {
 				"---------------------------------------------------------------------------------------------");
 		System.out.println("\nHora da verdade, caro jogador!!\n");
 
-		gv.isValido(lista);
-		if (!gv.ganhador()) {
+		boolean ganhador = false;
+		if(m == 1) {
+			gv.isValido(lista);
+			ganhador = gv.ganhador();
+		} else {
+			hard.isValido(lista);
+			ganhador = hard.ganhador();
+		}
+		
+		if (!ganhador) {
 			System.out.println(
 					"\nQue pena... Você não obteve a quantidade correta pra ser um MasterMind.\n Mas não desânime! Tente novamente até se tornar um grande MasterMind!!\n");
 			System.out.println(
